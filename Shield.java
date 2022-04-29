@@ -2,6 +2,7 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+
 public class Shield {
 
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class Shield {
         heroes.add(new Hero("Doctor Strange", 42, false));
 
         List<Hero> elders;
+        elders = heroes.stream().filter(h -> h.getAge() > 59).collect(Collectors.toList());
         // TODO 1 : filter heroes in order to found heroes older than 59
 
         System.out.println("\nElders:");
@@ -26,6 +28,7 @@ public class Shield {
         }
 
         List<Hero> intolerants;
+        intolerants = heroes.stream().filter(h->h.isGlutenIntolerant()).collect(Collectors.toList());
         // TODO 2 : filter heroes in order to found heroes that are gluten intolerants
 
         System.out.println("\nGluten intolerants:");
